@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun Quiz!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        #quiz-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.wrong {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Fun Quiz!</h1>
+        <p>What is the capital of France?</p>
+        <button onclick="checkAnswer('Paris')">Paris</button>
+        <button onclick="checkAnswer('London')" class="wrong">London</button>
+        <button onclick="checkAnswer('Berlin')" class="wrong">Berlin</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer === 'Paris') {
+                document.getElementById('result').textContent = 'Correct!';
+                document.getElementById('result').style.color = 'green';
+            } else {
+                document.getElementById('result').textContent = 'Incorrect!';
+                document.getElementById('result').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
